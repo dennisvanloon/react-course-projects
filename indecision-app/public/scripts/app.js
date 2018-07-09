@@ -1,11 +1,36 @@
+'use strict';
+
 console.log('Indecision app js running');
 
-// var template = <p>Welcome to the Indecision App</p>;
 var template = React.createElement(
-  "p",
-  {id : "someid"},
-  "Welcome to the Indecision App"
+  'div',
+  null,
+  React.createElement(
+    'h1',
+    null,
+    'Welcome again to the Indecision App'
+  ),
+  React.createElement(
+    'p',
+    null,
+    'This is some info'
+  ),
+  React.createElement(
+    'ol',
+    null,
+    React.createElement(
+      'li',
+      null,
+      'Item One'
+    ),
+    React.createElement(
+      'li',
+      null,
+      'Item Two'
+    )
+  )
 );
+
 var approot = document.getElementById('app');
 
 ReactDOM.render(template, approot);
