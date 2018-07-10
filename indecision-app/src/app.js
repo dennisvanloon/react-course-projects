@@ -1,12 +1,12 @@
 console.log('Indecision app js running');
 
-var app = {
+const app = {
   title: 'This is the indecision app',
   subtitle: 'I hope you like it',
   options: ['One', 'Two']
 };
 
-var template = (
+const template = (
   <div>
     <h1>{app.title}</h1>
     {app.subtitle && <p>{app.subtitle}</p>}
@@ -18,6 +18,6 @@ var template = (
   </div>
 );
 
-var approot = document.getElementById('app');
+const approot = document.getElementById('app');
 
 ReactDOM.render(template, approot);
