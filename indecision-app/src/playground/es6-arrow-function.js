@@ -7,7 +7,7 @@ console.log(square(3));
 //   return x * x;
 // };
 const squareArrow = (x) => x * x;
-console.log(squareArrow(4));
+console.log();(squareArrow(4));
 
 // const getFirstName = (fullName) => {
 //   return fullName.split(' ')[0];
