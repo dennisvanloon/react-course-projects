@@ -48,8 +48,12 @@ class Option extends React.Component {
 }
 
 class Options extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleRemoveAll = this.handleRemoveAll.bind(this);
+    }
     handleRemoveAll() {
-        alert('Handle Remove All')
+        console.log(this.props.options)
     }
     render() {
         return (
