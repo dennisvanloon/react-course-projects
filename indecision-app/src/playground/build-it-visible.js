@@ -1,28 +1,36 @@
-const approot = document.getElementById('app');
+class VisibilityToggle extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleVisibilityToggle = this.handleVisibilityToggle.bind(this);
+        this.state = {
+            visbility: false
+        }
+    }
 
-let visible = false;
+    handleVisibilityToggle() {
+        this.setState((previousState) => {
+            return {
+                visbility: !previousState.visbility
+            };
+        });
+    }
 
-const onToggle = () => {
-    visible = !visible;
-    renderVisibilityToggleApp();
-}
-
-const renderVisibilityToggleApp = () => {
-    const template = (
-        <div>
-            <h1>Visibility Toggle</h1>
-            <button onClick={onToggle}>
-                {visible ? 'Hide details' : 'Show details'}
+    render() {
+        return (
+            <div>
+                <h1>Visibility Toggle</h1>
+            <button onClick={this.handleVisibilityToggle}>
+                {this.state.visbility ? 'Hide details' : 'Show details'}
             </button>
-            {visible && (
+            {this.state.visbility && (
                 <div>
                     <p>These are the details of the app</p>
                 </div>
             )}
 
-        </div>
-    );
-    ReactDOM.render(template, approot);
-};
+            </div>
+        )
+    }
+}
 
-renderVisibilityToggleApp();
+ReactDOM.render(<VisibilityToggle/>, document.getElementById('app'));
