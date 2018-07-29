@@ -50,7 +50,6 @@ const sortByAmount = () => ({
     type: 'SORT_BY_AMOUNT',
 });
 
-
 // SET START DATE
 const setStartDate= (startDate) => ({
     type: 'SET_START_DATE',
@@ -137,6 +136,13 @@ const getVisibleExpenses = (expenses, {text, sortBy, startDate, endDate}) => {
       const textMatch = expense.description.toLowerCase().includes(text.toLowerCase());
 
       return startDateMatch && endDateMatch && textMatch;
+  }).sort((a, b) => {
+      if (sortBy === 'date') {
+          return a.createdAt < b.createdAt ? 1 : -1;
+      } else if (sortBy === 'amount') {
+          return a.amount < b.amount ? 1 : -1;
+      }
+
   });
 };
 
@@ -158,10 +164,10 @@ const expenseTwo = store.dispatch(addExpense({ description: 'Second description'
 //store.dispatch(removeExpense({ id: expenseOne.expense.id }));
 //store.dispatch(editExpense(expenseTwo.expense.id, {amount: 500}));
 
-store.dispatch(setTextFilter('first'));
+//store.dispatch(setTextFilter('description'));
 // store.dispatch(setTextFilter());
 //
-// store.dispatch(sortByAmount());
+store.dispatch(sortByAmount());
 // store.dispatch(sortByDate());
 //
 //store.dispatch(setStartDate(125));
