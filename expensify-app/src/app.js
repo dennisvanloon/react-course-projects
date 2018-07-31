@@ -19,7 +19,7 @@ console.log(store.getState());
 
 console.log(getVisibleExpenses(store.getState().expenses, store.getState().filters));
 
-store.dispatch(setTextFilter('water'));
+store.dispatch(setTextFilter('bill'));
 console.log(getVisibleExpenses(store.getState().expenses, store.getState().filters));
 
 const jsx = (
