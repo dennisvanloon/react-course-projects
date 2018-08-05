@@ -2,7 +2,7 @@ import { setTextFilter, setEndDate, setStartDate, sortByAmount, sortByDate } fro
 import moment from 'moment';
 
 test('Should generate set startdate action object', () => {
-    const thisMoment = moment.now();
+    const thisMoment = moment(900);
     const action = setStartDate(thisMoment);
     expect(action).toEqual({
         type: 'SET_START_DATE',
@@ -11,7 +11,7 @@ test('Should generate set startdate action object', () => {
 });
 
 test('Should generate set enddate action object', () => {
-    const thisMoment = moment.now();
+    const thisMoment = moment(600);
     const action = setEndDate(thisMoment);
     expect(action).toEqual({
         type: 'SET_END_DATE',

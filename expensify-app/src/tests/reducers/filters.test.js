@@ -38,7 +38,7 @@ test('should set text filter', () => {
 });
 
 test('should set start date filter', () => {
-    const startDate = moment.now();
+    const startDate = moment(900);
     const action = {
         type: 'SET_START_DATE',
         startDate
@@ -48,7 +48,7 @@ test('should set start date filter', () => {
 });
 
 test('should set end date filter', () => {
-    const endDate = moment.now();
+    const endDate = moment(600);
     const action = {
         type: 'SET_END_DATE',
         endDate
