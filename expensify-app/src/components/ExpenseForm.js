@@ -40,7 +40,6 @@ export default class ExpenseForm extends React.Component {
     };
 
     onFocusChange = ({focused}) => {
-        console.log(focused);
         this.setState(() => ({ calendarFocused: focused }));
     };
 
