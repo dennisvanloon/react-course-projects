@@ -9,3 +9,7 @@ live-server public
 
 
 https://reactjs.org/docs/events.html
+
+After 135
+Running the Express Server in Expensify App
+node server/server.js
