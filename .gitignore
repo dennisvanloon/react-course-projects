@@ -1,2 +1,4 @@
 node_modules
 .idea
+expensify-app/public/bundle.js*
+expensify-app/public/styles.css*
